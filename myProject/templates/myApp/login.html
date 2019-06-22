@@ -1,0 +1,20 @@
+{% extends 'myApp/base.html' %}
+{% load staticfiles %}
+
+{% block bodyblock %}
+
+<div class="container">
+    <div class="jumbotron">
+        
+        <form action="{% url 'jmc:user_login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username">
+            <label for="password">Password: </label>
+            <input type="password" name="password">
+            <input type="submit" class="btn btn-success" value="submit">
+            
+        </form>
+    </div>
+</div>
+{% endblock %}
